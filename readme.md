@@ -1,6 +1,6 @@
 ## JMTabView
 
-This is a dark-themed and easy to use Tab View replacement created entirely using Core Graphics, so that it is easy to drop-in to your projects and operates smoothly on iOS devices.  The library itself will also be used in Alien Blue's upcoming iOS updates.
+This is a dark-themed and easy to use tab view created entirely using Core Graphics, so that it is easy to drop-in to your projects and operates smoothly on iOS devices.  The library itself will also be used in Alien Blue's upcoming iOS updates.
 
 ## How it looks
 
@@ -13,6 +13,7 @@ Here's what JMTabView looks like:
 A demo project is included in this repository so that you can dive right in.  In brief, to draw the tab view, you can do the following:
 
 `JMTabView * tabView = [[[JMTabView alloc] initWithFrame:frame] autorelease];`
+
 `[tabView setDelegate:self];`
 
 You can then add tab items:
