@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4719172713A4875400567E9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4719172513A4875400567E9E /* InfoPlist.strings */; };
+		4719172A13A4875400567E9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719172913A4875400567E9E /* main.m */; };
+		4719174D13A48F4300567E9E /* libJMTabView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 471916E913A4833A00567E9E /* libJMTabView.a */; };
+		4719175F13A4909500567E9E /* JMTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4719175C13A4909500567E9E /* JMTabView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4719176013A4909500567E9E /* JMTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719175D13A4909500567E9E /* JMTabView.m */; };
+		4719176313A490CF00567E9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176213A490CF00567E9E /* UIKit.framework */; };
+		4719176513A490D500567E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176413A490D500567E9E /* CoreGraphics.framework */; };
+		4719176713A490DC00567E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176613A490DC00567E9E /* QuartzCore.framework */; };
+		4719176913A490E200567E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176813A490E200567E9E /* Foundation.framework */; };
+		4719176B13A490F500567E9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176A13A490F500567E9E /* UIKit.framework */; };
+		4719176D13A490FB00567E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176C13A490FB00567E9E /* Foundation.framework */; };
+		4719176F13A4910000567E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176E13A4910000567E9E /* QuartzCore.framework */; };
+		4719177113A4910600567E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719177013A4910600567E9E /* CoreGraphics.framework */; };
+		47F343C213A49AD700EC49ED /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343C013A49AD700EC49ED /* UIColor+Hex.h */; settings = {ATTRIBUTES = (); }; };
+		47F343C313A49AD700EC49ED /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343C113A49AD700EC49ED /* UIColor+Hex.m */; };
+		47F343C713A49BA900EC49ED /* BarBackgroundLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343C513A49BA900EC49ED /* BarBackgroundLayer.h */; settings = {ATTRIBUTES = (); }; };
+		47F343C813A49BA900EC49ED /* BarBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343C613A49BA900EC49ED /* BarBackgroundLayer.m */; };
+		47F343D213A4A23400EC49ED /* JMTabContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343D013A4A23400EC49ED /* JMTabContainer.h */; };
+		47F343D313A4A23400EC49ED /* JMTabContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343D113A4A23400EC49ED /* JMTabContainer.m */; };
+		47F343D613A4A3BE00EC49ED /* JMTabItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343D413A4A3BE00EC49ED /* JMTabItem.h */; };
+		47F343D713A4A3BE00EC49ED /* JMTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343D513A4A3BE00EC49ED /* JMTabItem.m */; };
+		47F343D913A4A78500EC49ED /* JMTabConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343D813A4A78500EC49ED /* JMTabConstants.h */; };
+		47F343E013A4AF6F00EC49ED /* TabDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343DC13A4AF6F00EC49ED /* TabDemoAppDelegate.m */; };
+		47F343E113A4AF6F00EC49ED /* TabDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343DE13A4AF6F00EC49ED /* TabDemoViewController.m */; };
+		47F343E813A4B52300EC49ED /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E213A4B15500EC49ED /* icon1.png */; };
+		47F343E913A4B52500EC49ED /* icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E313A4B15500EC49ED /* icon1@2x.png */; };
+		47F343EA13A4B52700EC49ED /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E413A4B15500EC49ED /* icon2.png */; };
+		47F343EB13A4B52A00EC49ED /* icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E513A4B15500EC49ED /* icon2@2x.png */; };
+		47F343EC13A4B52C00EC49ED /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E613A4B15500EC49ED /* icon3.png */; };
+		47F343ED13A4B52E00EC49ED /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F343E713A4B15500EC49ED /* icon3@2x.png */; };
+		47F343F013A4B6ED00EC49ED /* JMSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343EE13A4B6ED00EC49ED /* JMSelectionView.h */; };
+		47F343F113A4B6ED00EC49ED /* JMSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343EF13A4B6ED00EC49ED /* JMSelectionView.m */; };
+		47F3441C13A4E27100EC49ED /* UIView+InnerShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F3441A13A4E27100EC49ED /* UIView+InnerShadow.h */; };
+		47F3441D13A4E27100EC49ED /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F3441B13A4E27100EC49ED /* UIView+InnerShadow.m */; };
+		47F3442213A4E95400EC49ED /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F3441E13A4E95400EC49ED /* UIView+Positioning.h */; };
+		47F3442313A4E95400EC49ED /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F3441F13A4E95400EC49ED /* UIView+Positioning.m */; };
+		47F3442413A4E95400EC49ED /* UIView+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F3442013A4E95400EC49ED /* UIView+Size.h */; };
+		47F3442513A4E95400EC49ED /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F3442113A4E95400EC49ED /* UIView+Size.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4719174B13A48F3C00567E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 471916E013A4833A00567E9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 471916E813A4833A00567E9E;
+			remoteInfo = JMTabView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		471916E913A4833A00567E9E /* libJMTabView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJMTabView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		471916F013A4833A00567E9E /* JMTabView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMTabView-Prefix.pch"; sourceTree = "<group>"; };
+		4719171D13A4875400567E9E /* TabDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4719172413A4875400567E9E /* TabDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TabDemo-Info.plist"; sourceTree = "<group>"; };
+		4719172613A4875400567E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4719172813A4875400567E9E /* TabDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4719172913A4875400567E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4719175C13A4909500567E9E /* JMTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabView.h; sourceTree = "<group>"; };
+		4719175D13A4909500567E9E /* JMTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTabView.m; sourceTree = "<group>"; };
+		4719176213A490CF00567E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4719176413A490D500567E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4719176613A490DC00567E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4719176813A490E200567E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4719176A13A490F500567E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4719176C13A490FB00567E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4719176E13A4910000567E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4719177013A4910600567E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		47F343C013A49AD700EC49ED /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		47F343C113A49AD700EC49ED /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		47F343C513A49BA900EC49ED /* BarBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBackgroundLayer.h; sourceTree = "<group>"; };
+		47F343C613A49BA900EC49ED /* BarBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBackgroundLayer.m; sourceTree = "<group>"; };
+		47F343D013A4A23400EC49ED /* JMTabContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabContainer.h; sourceTree = "<group>"; };
+		47F343D113A4A23400EC49ED /* JMTabContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTabContainer.m; sourceTree = "<group>"; };
+		47F343D413A4A3BE00EC49ED /* JMTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabItem.h; sourceTree = "<group>"; };
+		47F343D513A4A3BE00EC49ED /* JMTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTabItem.m; sourceTree = "<group>"; };
+		47F343D813A4A78500EC49ED /* JMTabConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabConstants.h; sourceTree = "<group>"; };
+		47F343DB13A4AF6F00EC49ED /* TabDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabDemoAppDelegate.h; sourceTree = "<group>"; };
+		47F343DC13A4AF6F00EC49ED /* TabDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabDemoAppDelegate.m; sourceTree = "<group>"; };
+		47F343DD13A4AF6F00EC49ED /* TabDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabDemoViewController.h; sourceTree = "<group>"; };
+		47F343DE13A4AF6F00EC49ED /* TabDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabDemoViewController.m; sourceTree = "<group>"; };
+		47F343E213A4B15500EC49ED /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		47F343E313A4B15500EC49ED /* icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@2x.png"; sourceTree = "<group>"; };
+		47F343E413A4B15500EC49ED /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		47F343E513A4B15500EC49ED /* icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@2x.png"; sourceTree = "<group>"; };
+		47F343E613A4B15500EC49ED /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		47F343E713A4B15500EC49ED /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
+		47F343EE13A4B6ED00EC49ED /* JMSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSelectionView.h; sourceTree = "<group>"; };
+		47F343EF13A4B6ED00EC49ED /* JMSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSelectionView.m; sourceTree = "<group>"; };
+		47F3441A13A4E27100EC49ED /* UIView+InnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InnerShadow.h"; sourceTree = "<group>"; };
+		47F3441B13A4E27100EC49ED /* UIView+InnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InnerShadow.m"; sourceTree = "<group>"; };
+		47F3441E13A4E95400EC49ED /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
+		47F3441F13A4E95400EC49ED /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
+		47F3442013A4E95400EC49ED /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
+		47F3442113A4E95400EC49ED /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		471916E613A4833A00567E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719176913A490E200567E9E /* Foundation.framework in Frameworks */,
+				4719176713A490DC00567E9E /* QuartzCore.framework in Frameworks */,
+				4719176513A490D500567E9E /* CoreGraphics.framework in Frameworks */,
+				4719176313A490CF00567E9E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4719171A13A4875400567E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719177113A4910600567E9E /* CoreGraphics.framework in Frameworks */,
+				4719176F13A4910000567E9E /* QuartzCore.framework in Frameworks */,
+				4719176D13A490FB00567E9E /* Foundation.framework in Frameworks */,
+				4719176B13A490F500567E9E /* UIKit.framework in Frameworks */,
+				4719174D13A48F4300567E9E /* libJMTabView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		471916DE13A4833A00567E9E = {
+			isa = PBXGroup;
+			children = (
+				471916EE13A4833A00567E9E /* JMTabView */,
+				4719172213A4875400567E9E /* TabDemo */,
+				471916EA13A4833A00567E9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		471916EA13A4833A00567E9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4719171D13A4875400567E9E /* TabDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		471916EE13A4833A00567E9E /* JMTabView */ = {
+			isa = PBXGroup;
+			children = (
+				4719175713A4909500567E9E /* Classes */,
+				471916EF13A4833A00567E9E /* Supporting Files */,
+				4719176113A4909B00567E9E /* Frameworks */,
+			);
+			path = JMTabView;
+			sourceTree = "<group>";
+		};
+		471916EF13A4833A00567E9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				471916F013A4833A00567E9E /* JMTabView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4719172213A4875400567E9E /* TabDemo */ = {
+			isa = PBXGroup;
+			children = (
+				47F343DA13A4AF6F00EC49ED /* Classes */,
+				47F343DF13A4AF6F00EC49ED /* Resources */,
+				4719175413A4902900567E9E /* Frameworks */,
+				4719172313A4875400567E9E /* Supporting Files */,
+			);
+			path = TabDemo;
+			sourceTree = "<group>";
+		};
+		4719172313A4875400567E9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4719172413A4875400567E9E /* TabDemo-Info.plist */,
+				4719172513A4875400567E9E /* InfoPlist.strings */,
+				4719172813A4875400567E9E /* TabDemo-Prefix.pch */,
+				4719172913A4875400567E9E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4719175413A4902900567E9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				471916E913A4833A00567E9E /* libJMTabView.a */,
+				4719177013A4910600567E9E /* CoreGraphics.framework */,
+				4719176E13A4910000567E9E /* QuartzCore.framework */,
+				4719176C13A490FB00567E9E /* Foundation.framework */,
+				4719176A13A490F500567E9E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4719175713A4909500567E9E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				47F343BF13A49AC700EC49ED /* Categories */,
+				4719175B13A4909500567E9E /* Subviews */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4719175B13A4909500567E9E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				47F343C413A49B8600EC49ED /* Layers */,
+				4719175C13A4909500567E9E /* JMTabView.h */,
+				4719175D13A4909500567E9E /* JMTabView.m */,
+				47F343D013A4A23400EC49ED /* JMTabContainer.h */,
+				47F343D113A4A23400EC49ED /* JMTabContainer.m */,
+				47F343D413A4A3BE00EC49ED /* JMTabItem.h */,
+				47F343D513A4A3BE00EC49ED /* JMTabItem.m */,
+				47F343D813A4A78500EC49ED /* JMTabConstants.h */,
+				47F343EE13A4B6ED00EC49ED /* JMSelectionView.h */,
+				47F343EF13A4B6ED00EC49ED /* JMSelectionView.m */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		4719176113A4909B00567E9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4719176813A490E200567E9E /* Foundation.framework */,
+				4719176613A490DC00567E9E /* QuartzCore.framework */,
+				4719176413A490D500567E9E /* CoreGraphics.framework */,
+				4719176213A490CF00567E9E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47F343BF13A49AC700EC49ED /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				47F3441E13A4E95400EC49ED /* UIView+Positioning.h */,
+				47F3441F13A4E95400EC49ED /* UIView+Positioning.m */,
+				47F3442013A4E95400EC49ED /* UIView+Size.h */,
+				47F3442113A4E95400EC49ED /* UIView+Size.m */,
+				47F343C013A49AD700EC49ED /* UIColor+Hex.h */,
+				47F343C113A49AD700EC49ED /* UIColor+Hex.m */,
+				47F3441A13A4E27100EC49ED /* UIView+InnerShadow.h */,
+				47F3441B13A4E27100EC49ED /* UIView+InnerShadow.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		47F343C413A49B8600EC49ED /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				47F343C513A49BA900EC49ED /* BarBackgroundLayer.h */,
+				47F343C613A49BA900EC49ED /* BarBackgroundLayer.m */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		47F343DA13A4AF6F00EC49ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				47F343DB13A4AF6F00EC49ED /* TabDemoAppDelegate.h */,
+				47F343DC13A4AF6F00EC49ED /* TabDemoAppDelegate.m */,
+				47F343DD13A4AF6F00EC49ED /* TabDemoViewController.h */,
+				47F343DE13A4AF6F00EC49ED /* TabDemoViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		47F343DF13A4AF6F00EC49ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47F343E213A4B15500EC49ED /* icon1.png */,
+				47F343E313A4B15500EC49ED /* icon1@2x.png */,
+				47F343E413A4B15500EC49ED /* icon2.png */,
+				47F343E513A4B15500EC49ED /* icon2@2x.png */,
+				47F343E613A4B15500EC49ED /* icon3.png */,
+				47F343E713A4B15500EC49ED /* icon3@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		471916E713A4833A00567E9E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719175F13A4909500567E9E /* JMTabView.h in Headers */,
+				47F343C713A49BA900EC49ED /* BarBackgroundLayer.h in Headers */,
+				47F343C213A49AD700EC49ED /* UIColor+Hex.h in Headers */,
+				47F343D213A4A23400EC49ED /* JMTabContainer.h in Headers */,
+				47F343D613A4A3BE00EC49ED /* JMTabItem.h in Headers */,
+				47F343D913A4A78500EC49ED /* JMTabConstants.h in Headers */,
+				47F343F013A4B6ED00EC49ED /* JMSelectionView.h in Headers */,
+				47F3441C13A4E27100EC49ED /* UIView+InnerShadow.h in Headers */,
+				47F3442213A4E95400EC49ED /* UIView+Positioning.h in Headers */,
+				47F3442413A4E95400EC49ED /* UIView+Size.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		471916E813A4833A00567E9E /* JMTabView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 471916F313A4833A00567E9E /* Build configuration list for PBXNativeTarget "JMTabView" */;
+			buildPhases = (
+				471916E513A4833A00567E9E /* Sources */,
+				471916E613A4833A00567E9E /* Frameworks */,
+				471916E713A4833A00567E9E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMTabView;
+			productName = JMTabView;
+			productReference = 471916E913A4833A00567E9E /* libJMTabView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4719171C13A4875400567E9E /* TabDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4719173713A4875400567E9E /* Build configuration list for PBXNativeTarget "TabDemo" */;
+			buildPhases = (
+				4719171913A4875400567E9E /* Sources */,
+				4719171A13A4875400567E9E /* Frameworks */,
+				4719171B13A4875400567E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4719174C13A48F3C00567E9E /* PBXTargetDependency */,
+			);
+			name = TabDemo;
+			productName = TabDemo;
+			productReference = 4719171D13A4875400567E9E /* TabDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		471916E013A4833A00567E9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "The Design Shed";
+			};
+			buildConfigurationList = 471916E313A4833A00567E9E /* Build configuration list for PBXProject "JMTabView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 471916DE13A4833A00567E9E;
+			productRefGroup = 471916EA13A4833A00567E9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				471916E813A4833A00567E9E /* JMTabView */,
+				4719171C13A4875400567E9E /* TabDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4719171B13A4875400567E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719172713A4875400567E9E /* InfoPlist.strings in Resources */,
+				47F343E813A4B52300EC49ED /* icon1.png in Resources */,
+				47F343E913A4B52500EC49ED /* icon1@2x.png in Resources */,
+				47F343EA13A4B52700EC49ED /* icon2.png in Resources */,
+				47F343EB13A4B52A00EC49ED /* icon2@2x.png in Resources */,
+				47F343EC13A4B52C00EC49ED /* icon3.png in Resources */,
+				47F343ED13A4B52E00EC49ED /* icon3@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		471916E513A4833A00567E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719176013A4909500567E9E /* JMTabView.m in Sources */,
+				47F343C313A49AD700EC49ED /* UIColor+Hex.m in Sources */,
+				47F343C813A49BA900EC49ED /* BarBackgroundLayer.m in Sources */,
+				47F343D313A4A23400EC49ED /* JMTabContainer.m in Sources */,
+				47F343D713A4A3BE00EC49ED /* JMTabItem.m in Sources */,
+				47F343F113A4B6ED00EC49ED /* JMSelectionView.m in Sources */,
+				47F3441D13A4E27100EC49ED /* UIView+InnerShadow.m in Sources */,
+				47F3442313A4E95400EC49ED /* UIView+Positioning.m in Sources */,
+				47F3442513A4E95400EC49ED /* UIView+Size.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4719171913A4875400567E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4719172A13A4875400567E9E /* main.m in Sources */,
+				47F343E013A4AF6F00EC49ED /* TabDemoAppDelegate.m in Sources */,
+				47F343E113A4AF6F00EC49ED /* TabDemoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4719174C13A48F3C00567E9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 471916E813A4833A00567E9E /* JMTabView */;
+			targetProxy = 4719174B13A48F3C00567E9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4719172513A4875400567E9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4719172613A4875400567E9E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		471916F113A4833A00567E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		471916F213A4833A00567E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		471916F413A4833A00567E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/JMTabView.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMTabView/JMTabView-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		471916F513A4833A00567E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/JMTabView.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMTabView/JMTabView-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4719173813A4875400567E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TabDemo/TabDemo-Prefix.pch";
+				INFOPLIST_FILE = "TabDemo/TabDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4719173913A4875400567E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TabDemo/TabDemo-Prefix.pch";
+				INFOPLIST_FILE = "TabDemo/TabDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		471916E313A4833A00567E9E /* Build configuration list for PBXProject "JMTabView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471916F113A4833A00567E9E /* Debug */,
+				471916F213A4833A00567E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		471916F313A4833A00567E9E /* Build configuration list for PBXNativeTarget "JMTabView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471916F413A4833A00567E9E /* Debug */,
+				471916F513A4833A00567E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4719173713A4875400567E9E /* Build configuration list for PBXNativeTarget "TabDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4719173813A4875400567E9E /* Debug */,
+				4719173913A4875400567E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 471916E013A4833A00567E9E /* Project object */;
+}
