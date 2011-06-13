@@ -40,11 +40,19 @@
     
     if (self.icon)
     {
-        width += [self.icon size].width + kTabItemIconMargin;
+        width += [self.icon size].width;
     }
+    
+    if (self.icon && self.title)
+    {
+        width += kTabItemIconMargin;
+    }
+    
     width += (kTabItemPadding.width * 2);
     
-    CGFloat height = titleSize.height + (kTabItemPadding.height * 2);
+    CGFloat height = (titleSize.height > [self.icon size].height) ? titleSize.height : [self.icon size].height;
+    
+    height += (kTabItemPadding.height * 2);
     
     return CGSizeMake(width, height);
 }
