@@ -51,6 +51,11 @@
 
 - (void)drawRect:(CGRect)rect;
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIColor * shadowColor = [UIColor blackColor];
+    CGContextSetShadowWithColor(context, CGSizeMake(0.0f, 1.0f), 1.0f, [shadowColor CGColor]);
+    CGContextSaveGState(context);   
+    
     if (self.highlighted)
     {
         CGRect bounds = CGRectInset(rect, 2., 2.);
@@ -62,7 +67,7 @@
     }
     
     CGFloat xOffset = kTabItemPadding.width;
-    
+
     if (self.icon)
     {
         [self.icon drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height)];
@@ -71,6 +76,8 @@
     
     [kTabItemTextColor set];
     [self.title drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height) withFont:kTabItemFont];
+    
+    CGContextRestoreGState(context);
 }
 
 - (void)setHighlighted:(BOOL)highlighted;
