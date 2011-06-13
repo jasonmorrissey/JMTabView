@@ -6,7 +6,7 @@ This is a dark-themed and easy to use tab view created entirely using Core Graph
 
 Here's what JMTabView looks like:
 
-<img src="http://alienblue.org/github/JMTabView.png" width=477 height=54 />
+<img src="http://alienblue.org/github/JMTabView-retina.png" width=638 height=120 />
 
 ## Usage
 
