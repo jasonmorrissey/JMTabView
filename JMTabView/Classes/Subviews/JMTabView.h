@@ -16,6 +16,7 @@
 
 @interface JMTabView : UIView 
 
+- (void)setMomentary:(BOOL)momentary;
 - (void)didSelectItemAtIndex:(NSUInteger)index;
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 - (void)setSelectedIndex:(NSUInteger)index;

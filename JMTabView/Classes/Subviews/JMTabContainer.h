@@ -8,8 +8,10 @@
     CGSize containerSize_;
 }
 
+@property (assign) BOOL momentary;
+
 - (void)itemSelected:(JMTabItem *)tabItem;
 - (void)addTabItem:(JMTabItem *)tabItem;
-- (void)selectItemAtIndex:(NSUInteger)index;
+- (void)animateSelectionToItemAtIndex:(NSUInteger)index;
 - (NSUInteger)numberOfTabItems;
 @end

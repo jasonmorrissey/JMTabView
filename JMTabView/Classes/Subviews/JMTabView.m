@@ -57,6 +57,11 @@
 #pragma Mark -
 #pragma External Interface
 
+- (void)setMomentary:(BOOL)momentary;
+{
+    [self.tabContainer setMomentary:momentary];
+}
+
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
     JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon];
@@ -65,7 +70,7 @@
 
 - (void)setSelectedIndex:(NSUInteger)index;
 {
-    [self.tabContainer selectItemAtIndex:index];
+    [self.tabContainer animateSelectionToItemAtIndex:index];
 }
 
 @end

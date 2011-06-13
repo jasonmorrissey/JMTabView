@@ -16,6 +16,7 @@
 
 @synthesize tabItems = tabItems_;
 @synthesize selectionView = selectionView_;
+@synthesize momentary = momentary_;
 
 - (void)dealloc
 {
@@ -78,14 +79,18 @@
 - (void)itemSelected:(JMTabItem *)tabItem;
 {
     NSUInteger index = [self.tabItems indexOfObject:tabItem];
-    [self selectItemAtIndex:index];
+    
+    if (!self.momentary)
+    {
+        [self animateSelectionToItemAtIndex:index];
+    }
     
     // notify parent tabView
     JMTabView * tabView = (JMTabView *)[self superview];
     [tabView didSelectItemAtIndex:index];
 }
 
-- (void)selectItemAtIndex:(NSUInteger)index;
+- (void)animateSelectionToItemAtIndex:(NSUInteger)index;
 {
     JMTabItem * tabItem = [self.tabItems objectAtIndex:index];
     [UIView beginAnimations:kSelectionAnimation context:self.selectionView];
