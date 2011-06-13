@@ -95,7 +95,7 @@
     JMTabItem * tabItem = [self.tabItems objectAtIndex:index];
     [UIView beginAnimations:kSelectionAnimation context:self.selectionView];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0 : kTabSelectionAnimationDuration)];
+    [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0. : kTabSelectionAnimationDuration)];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     self.selectionView.frame = tabItem.frame;
     [UIView commitAnimations];
