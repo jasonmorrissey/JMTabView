@@ -16,6 +16,12 @@
     [tabView addTabItemWithTitle:@"One" icon:[UIImage imageNamed:@"icon1.png"]];
     [tabView addTabItemWithTitle:@"Two" icon:[UIImage imageNamed:@"icon2.png"]];
     [tabView addTabItemWithTitle:@"Three" icon:[UIImage imageNamed:@"icon3.png"]];
+
+//    You can run blocks by specifiying an executeBlock: paremeter
+//    #if NS_BLOCKS_AVAILABLE
+//    [tabView addTabItemWithTitle:@"b2" icon:nil executeBlock:^{NSLog(@"abc");}];
+//    [tabView addTabItemWithTitle:@"b3" icon:nil executeBlock:^{NSLog(@"123");}];
+//    #endif
     
     [tabView setSelectedIndex:0];
     
