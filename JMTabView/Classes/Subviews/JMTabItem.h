@@ -11,12 +11,11 @@ typedef void(^JMTabExecutionBlock)(void);
 
 @property (nonatomic,retain) NSString * title;
 @property (nonatomic,retain) UIImage * icon;
-
-+ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
+@property (nonatomic,retain) UIImage * alternativeIcon;
 
 #if NS_BLOCKS_AVAILABLE
 @property (nonatomic,copy) JMTabExecutionBlock executeBlock;
-+ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
++ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon executeBlock:(JMTabExecutionBlock)executeBlock;
 #endif
 
 @end
