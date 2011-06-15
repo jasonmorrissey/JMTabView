@@ -68,6 +68,14 @@
     [self.tabContainer addTabItem:tabItem];
 }
 
+#if NS_BLOCKS_AVAILABLE
+- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
+{
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon executeBlock:executeBlock];
+    [self.tabContainer addTabItem:tabItem];
+}
+#endif
+
 - (void)setSelectedIndex:(NSUInteger)index;
 {
     [self.tabContainer layoutSubviews];

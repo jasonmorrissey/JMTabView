@@ -1,6 +1,7 @@
 //  Created by Jason Morrissey
 
 #import <UIKit/UIKit.h>
+#import "JMTabItem.h"
 
 @class JMTabView;
 
@@ -21,5 +22,9 @@
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 - (void)setSelectedIndex:(NSUInteger)index;
 @property (nonatomic,assign) id<JMTabViewDelegate> delegate;
+
+#if NS_BLOCKS_AVAILABLE
+- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
+#endif
 
 @end
