@@ -7,11 +7,13 @@
 
 @synthesize title = title_;
 @synthesize icon = icon_;
+@synthesize executeBlock = executeBlock_;
 
 - (void)dealloc;
 {
     self.title = nil;
     self.icon = nil;
+    self.executeBlock = nil;
     [super dealloc];
 }
 
@@ -98,6 +100,13 @@
 {
     JMTabContainer *tabView = (JMTabContainer *)[self superview];
     [tabView itemSelected:self];
+
+    #ifdef NS_BLOCKS_AVAILABLE
+    if (executeBlock_)
+    {
+        executeBlock_();
+    }
+    #endif
 }
 
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
@@ -106,5 +115,14 @@
     [tabItem sizeToFit];
     return tabItem;
 }
+
+#ifdef NS_BLOCKS_AVAILABLE
++ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
+{
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon];
+    tabItem.executeBlock = executeBlock;
+    return tabItem;
+}
+#endif
 
 @end
