@@ -1,9 +1,9 @@
 //  Created by Jason Morrissey
 
-#define kTabItemFont [UIFont boldSystemFontOfSize:11.]
+#define kTabItemFont [UIFont boldSystemFontOfSize:12.]
 #define kTabItemTextColor [UIColor whiteColor]
-#define kTabItemPadding CGSizeMake(10., 10.)
-#define kTabItemIconMargin 0.
-#define kTabSpacing 0.
+#define kTabItemPadding CGSizeMake(16., 10.)
+#define kTabItemIconMargin 8.
+#define kTabSpacing 14.
 #define kTabSelectionAnimationDuration 0.3
 

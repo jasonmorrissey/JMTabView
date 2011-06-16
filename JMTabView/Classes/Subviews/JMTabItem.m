@@ -7,26 +7,23 @@
 
 @synthesize title = title_;
 @synthesize icon = icon_;
-@synthesize alternativeIcon = alternativeIcon_;
 @synthesize executeBlock = executeBlock_;
 
 - (void)dealloc;
 {
     self.title = nil;
     self.icon = nil;
-    self.alternativeIcon = nil;
     self.executeBlock = nil;
     [super dealloc];
 }
 
-- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon;
+- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
     self = [super init];
     if (self)
     {
         self.title = title;
         self.icon = icon;
-        self.alternativeIcon = alternativeIcon;
         self.backgroundColor = [UIColor clearColor];
         
         [self setIsAccessibilityElement:YES];
@@ -41,67 +38,56 @@
 {
     CGSize titleSize = [self.title sizeWithFont:kTabItemFont];
     
-    CGFloat titleWidth = titleSize.width;
+    CGFloat width = titleSize.width;
     
-    CGFloat iconWidth = [self.icon size].width;
-   
-    CGFloat width = (iconWidth > titleWidth) ? iconWidth : titleWidth;
-   
+    if (self.icon)
+    {
+        width += [self.icon size].width;
+    }
+    
+    if (self.icon && self.title)
+    {
+        width += kTabItemIconMargin;
+    }
+    
     width += (kTabItemPadding.width * 2);
     
-    CGFloat height = 50.;
+    CGFloat height = (titleSize.height > [self.icon size].height) ? titleSize.height : [self.icon size].height;
+    
+    height += (kTabItemPadding.height * 2);
     
     return CGSizeMake(width, height);
 }
 
 - (void)drawRect:(CGRect)rect;
 {
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    UIColor * shadowColor = [UIColor blackColor];
-//    CGContextSetShadowWithColor(context, CGSizeMake(0.0f, 1.0f), 1.0f, [shadowColor CGColor]);
-//    CGContextSaveGState(context);   
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIColor * shadowColor = [UIColor blackColor];
+    CGContextSetShadowWithColor(context, CGSizeMake(0.0f, 1.0f), 1.0f, [shadowColor CGColor]);
+    CGContextSaveGState(context);   
     
-//    if (self.highlighted)
-//    {
-//        CGRect bounds = CGRectInset(rect, 2., 2.);
-//        CGFloat radius = 0.5f * CGRectGetHeight(bounds);
-//        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:radius];
-//        [[UIColor colorWithWhite:1. alpha:0.3] set];
-//        path.lineWidth = 2.;
-//        [path stroke];
-//    }
+    if (self.highlighted)
+    {
+        CGRect bounds = CGRectInset(rect, 2., 2.);
+        CGFloat radius = 0.5f * CGRectGetHeight(bounds);
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:radius];
+        [[UIColor colorWithWhite:1. alpha:0.3] set];
+        path.lineWidth = 2.;
+        [path stroke];
+    }
     
-    CGRect bounds = rect;
+    CGFloat xOffset = kTabItemPadding.width;
 
-    UIImage * iconImage = self.highlighted ? self.alternativeIcon : self.icon;
+    if (self.icon)
+    {
+        [self.icon drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height)];
+        xOffset += [self.icon size].width + kTabItemIconMargin;
+    }
     
-    // calculate icon position
-    CGFloat iconWidth = [iconImage size].width;
-    CGFloat iconMarginWidth = (bounds.size.width - iconWidth) / 2;
-  
-    [iconImage drawAtPoint:CGPointMake(iconMarginWidth, kTabItemPadding.height)];
-
-    // calculate title position
-    CGFloat titleWidth = [self.title sizeWithFont:kTabItemFont].width;
-    CGFloat titleMarginWidth = (bounds.size.width - titleWidth) / 2;
+    [kTabItemTextColor set];
+    [self.title drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height) withFont:kTabItemFont];
     
-    UIColor * textColor = self.highlighted ? [UIColor redColor] : kTabItemTextColor;
-    [textColor set];
-    [self.title drawAtPoint:CGPointMake(titleMarginWidth, kTabItemPadding.height + 22.) withFont:kTabItemFont];
-
-    
-//    
-//    
-//    
-//    
-//    
-//    CGFloat xOffset = kTabItemPadding.width;
-//
-//    [self.icon drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height)];
-//    xOffset += [self.icon size].width + kTabItemIconMargin;
-//    
-   
-//    CGContextRestoreGState(context);
+    CGContextRestoreGState(context);
 }
 
 - (void)setHighlighted:(BOOL)highlighted;
@@ -123,17 +109,17 @@
     #endif
 }
 
-+ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon;
++ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
-    JMTabItem * tabItem = [[[JMTabItem alloc] initWithTitle:title icon:icon alternativeIcon:alternativeIcon] autorelease];
+    JMTabItem * tabItem = [[[JMTabItem alloc] initWithTitle:title icon:icon] autorelease];
     [tabItem sizeToFit];
     return tabItem;
 }
 
 #ifdef NS_BLOCKS_AVAILABLE
-+ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon executeBlock:(JMTabExecutionBlock)executeBlock;
++ (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
 {
-    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon alternativeIcon:alternativeIcon];
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon];
     tabItem.executeBlock = executeBlock;
     return tabItem;
 }

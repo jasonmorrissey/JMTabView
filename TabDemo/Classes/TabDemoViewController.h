@@ -3,6 +3,6 @@
 #import <Foundation/Foundation.h>
 #import <JMTabView/JMTabView.h>
 
-@interface TabDemoViewController : UIViewController
+@interface TabDemoViewController : UIViewController <JMTabViewDelegate>
 
 @end

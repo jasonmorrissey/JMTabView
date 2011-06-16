@@ -62,16 +62,16 @@
     [self.tabContainer setMomentary:momentary];
 }
 
-- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon;
+- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
-    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon alternativeIcon:alternativeIcon executeBlock:nil];
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon];
     [self.tabContainer addTabItem:tabItem];
 }
 
 #if NS_BLOCKS_AVAILABLE
-- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternativeIcon:(UIImage *)alternativeIcon executeBlock:(JMTabExecutionBlock)executeBlock;
+- (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
 {
-    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon alternativeIcon:alternativeIcon executeBlock:executeBlock];
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:title icon:icon executeBlock:executeBlock];
     [self.tabContainer addTabItem:tabItem];
 }
 #endif
