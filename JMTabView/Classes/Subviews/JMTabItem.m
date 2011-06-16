@@ -96,10 +96,16 @@
     [self setNeedsDisplay];
 }
 
+-(BOOL)isSelectedTabItem;
+{
+    JMTabContainer *tabContainer = (JMTabContainer *)[self superview];
+    return [tabContainer isItemSelected:self];
+}
+
 - (void)itemTapped;
 {
-    JMTabContainer *tabView = (JMTabContainer *)[self superview];
-    [tabView itemSelected:self];
+    JMTabContainer *tabContainer = (JMTabContainer *)[self superview];
+    [tabContainer itemSelected:self];
 
     #ifdef NS_BLOCKS_AVAILABLE
     if (executeBlock_)
@@ -112,7 +118,6 @@
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
     JMTabItem * tabItem = [[[JMTabItem alloc] initWithTitle:title icon:icon] autorelease];
-    [tabItem sizeToFit];
     return tabItem;
 }
 

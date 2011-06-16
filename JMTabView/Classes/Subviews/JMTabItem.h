@@ -12,6 +12,9 @@ typedef void(^JMTabExecutionBlock)(void);
 @property (nonatomic,retain) NSString * title;
 @property (nonatomic,retain) UIImage * icon;
 
+- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon;
+-(BOOL)isSelectedTabItem;
+
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 
 #if NS_BLOCKS_AVAILABLE

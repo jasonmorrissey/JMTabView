@@ -2,6 +2,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JMTabItem.h"
+#import "JMSelectionView.h"
 
 @class JMTabView;
 
@@ -9,7 +10,7 @@
 #pragma Mark - JMTabViewDelegate
 
 @protocol JMTabViewDelegate
--(void)tabView:(JMTabView *)tabView didSelectTabAtIndex:(NSUInteger)index;
+-(void)tabView:(JMTabView *)tabView didSelectTabAtIndex:(NSUInteger)itemIndex;
 @end
 
 #pragma Mark -
@@ -18,13 +19,22 @@
 @interface JMTabView : UIView 
 
 - (void)setMomentary:(BOOL)momentary;
-- (void)didSelectItemAtIndex:(NSUInteger)index;
+- (void)didSelectItemAtIndex:(NSUInteger)itemIndex;
+- (void)addTabItem:(JMTabItem *)tabItem;
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
-- (void)setSelectedIndex:(NSUInteger)index;
+- (void)setSelectedIndex:(NSUInteger)itemIndex;
 @property (nonatomic,assign) id<JMTabViewDelegate> delegate;
 
 #if NS_BLOCKS_AVAILABLE
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
 #endif
+
+#pragma Mark -
+#pragma Mark - Customisation
+
+- (void)setSelectionView:(JMSelectionView *)selectionView;
+- (void)setItemSpacing:(CGFloat)itemSpacing;
+- (void)setBackgroundLayer:(CALayer *)backgroundLayer;
+
 
 @end
