@@ -40,7 +40,9 @@ JMTabView also supports the execution of blocks so that you can embed your logic
 
 ## Customisation
 
-Padding and spacing is currently specified in the `JMTabConstants.h`, although I am working to make these parameters easier to adjust at runtime.
+You can subclass `JMTabItem` and `JMSelectionView` to completely customize the view of the tabs.  For example, in the inclusive Demo you can see how I've customized the view to render tabs like this:
+
+<img src="http://alienblue.org/github/JMTabView-custom.png" width=639 height=153 />
 
 ## Installation
 

@@ -4,12 +4,11 @@
 
 // sourced from http://stackoverflow.com/questions/4431292/inner-shadow-effect-on-uiview-layer
 
-- (void)drawInnerShadowInRect:(CGRect)rect fillColor:(UIColor *)fillColor;
+- (void)drawInnerShadowInRect:(CGRect)rect radius:(CGFloat)radius fillColor:(UIColor *)fillColor;
 {
     CGRect bounds = [self bounds];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGFloat outsideOffset = 20.f;
-    CGFloat radius = 0.5f * CGRectGetHeight(bounds);
     
     CGMutablePathRef visiblePath = CGPathCreateMutable();
     CGPathMoveToPoint(visiblePath, NULL, bounds.size.width-radius, bounds.size.height);
@@ -47,6 +46,11 @@
     CGPathRelease(path);    
     CGPathRelease(visiblePath);     
     CGContextRestoreGState(context);
+}
+
+- (void)drawInnerShadowInRect:(CGRect)rect fillColor:(UIColor *)fillColor
+{
+    [self drawInnerShadowInRect:rect radius:(0.5f * CGRectGetHeight(rect)) fillColor:fillColor];
 }
 
 @end

@@ -1,7 +1,6 @@
 //  Created by Jason Morrissey
 
 #import "JMTabContainer.h"
-#import "JMSelectionView.h"
 #import "JMTabView.h"
 #import "UIView+Positioning.h"
 
@@ -9,14 +8,15 @@
 
 @interface JMTabContainer()
 @property (nonatomic,retain) NSMutableArray * tabItems;
-@property (nonatomic,retain) JMSelectionView * selectionView;
 @end
 
 @implementation JMTabContainer
 
 @synthesize tabItems = tabItems_;
 @synthesize selectionView = selectionView_;
+@synthesize selectedIndex = selectedIndex_;
 @synthesize momentary = momentary_;
+@synthesize itemSpacing = itemSpacing_;
 
 - (void)dealloc
 {
@@ -32,6 +32,7 @@
     {
         self.tabItems = [NSMutableArray array];
         self.selectionView = [[[JMSelectionView alloc] initWithFrame:CGRectZero] autorelease];
+        self.itemSpacing = kTabSpacing;
         [self addSubview:self.selectionView];
     }
     return self;
@@ -45,13 +46,14 @@
     
     for (JMTabItem * item in self.tabItems)
     {
+        [item sizeToFit];
         [item setFrame:CGRectMake(xOffset, yOffset, item.frame.size.width, item.frame.size.height)];
         
         xOffset += item.frame.size.width;
         
         if (item != [self.tabItems lastObject])
         {
-            xOffset += kTabSpacing;
+            xOffset += self.itemSpacing;
         }
 
         itemHeight = item.frame.size.height;
@@ -76,23 +78,33 @@
     [self setNeedsLayout];
 }
 
+- (BOOL)isItemSelected:(JMTabItem *)tabItem;
+{
+    return ([self.tabItems indexOfObject:tabItem] == self.selectedIndex);
+} 
+
 - (void)itemSelected:(JMTabItem *)tabItem;
 {
-    NSUInteger index = [self.tabItems indexOfObject:tabItem];
+    self.selectedIndex = [self.tabItems indexOfObject:tabItem];
     
     if (!self.momentary)
     {
-        [self animateSelectionToItemAtIndex:index];
+        [self animateSelectionToItemAtIndex:self.selectedIndex];
+    }
+    
+    for (JMTabItem * item in self.tabItems)
+    {
+        [item setNeedsDisplay];
     }
     
     // notify parent tabView
     JMTabView * tabView = (JMTabView *)[self superview];
-    [tabView didSelectItemAtIndex:index];
+    [tabView didSelectItemAtIndex:self.selectedIndex];
 }
 
-- (void)animateSelectionToItemAtIndex:(NSUInteger)index;
+- (void)animateSelectionToItemAtIndex:(NSUInteger)itemIndex;
 {
-    JMTabItem * tabItem = [self.tabItems objectAtIndex:index];
+    JMTabItem * tabItem = [self.tabItems objectAtIndex:itemIndex];
     [UIView beginAnimations:kSelectionAnimation context:self.selectionView];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0. : kTabSelectionAnimationDuration)];

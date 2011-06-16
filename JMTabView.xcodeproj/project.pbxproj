@@ -20,6 +20,12 @@
 		4719176D13A490FB00567E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176C13A490FB00567E9E /* Foundation.framework */; };
 		4719176F13A4910000567E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719176E13A4910000567E9E /* QuartzCore.framework */; };
 		4719177113A4910600567E9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4719177013A4910600567E9E /* CoreGraphics.framework */; };
+		47ABA8E813A9BCA900B056C3 /* CustomTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABA8E713A9BCA900B056C3 /* CustomTabItem.m */; };
+		47ABA90713A9F5B300B056C3 /* noise-tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 47ABA90513A9F5B300B056C3 /* noise-tile.png */; };
+		47ABA90813A9F5B300B056C3 /* noise-tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47ABA90613A9F5B300B056C3 /* noise-tile@2x.png */; };
+		47ABA90913A9F5CC00B056C3 /* CustomSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABA8EC13A9C0E300B056C3 /* CustomSelectionView.m */; };
+		47ABA90A13A9F5DA00B056C3 /* CustomBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABA8F613A9D3B700B056C3 /* CustomBackgroundLayer.m */; };
+		47ABA90D13A9F75600B056C3 /* CustomNoiseBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ABA90C13A9F75500B056C3 /* CustomNoiseBackgroundView.m */; };
 		47F343C213A49AD700EC49ED /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343C013A49AD700EC49ED /* UIColor+Hex.h */; settings = {ATTRIBUTES = (); }; };
 		47F343C313A49AD700EC49ED /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F343C113A49AD700EC49ED /* UIColor+Hex.m */; };
 		47F343C713A49BA900EC49ED /* BarBackgroundLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F343C513A49BA900EC49ED /* BarBackgroundLayer.h */; settings = {ATTRIBUTES = (); }; };
@@ -75,6 +81,16 @@
 		4719176C13A490FB00567E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4719176E13A4910000567E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4719177013A4910600567E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		47ABA8E613A9BCA900B056C3 /* CustomTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabItem.h; sourceTree = "<group>"; };
+		47ABA8E713A9BCA900B056C3 /* CustomTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabItem.m; sourceTree = "<group>"; };
+		47ABA8EB13A9C0E300B056C3 /* CustomSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSelectionView.h; sourceTree = "<group>"; };
+		47ABA8EC13A9C0E300B056C3 /* CustomSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSelectionView.m; sourceTree = "<group>"; };
+		47ABA8F513A9D3B700B056C3 /* CustomBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBackgroundLayer.h; sourceTree = "<group>"; };
+		47ABA8F613A9D3B700B056C3 /* CustomBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBackgroundLayer.m; sourceTree = "<group>"; };
+		47ABA90513A9F5B300B056C3 /* noise-tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise-tile.png"; sourceTree = "<group>"; };
+		47ABA90613A9F5B300B056C3 /* noise-tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise-tile@2x.png"; sourceTree = "<group>"; };
+		47ABA90B13A9F75500B056C3 /* CustomNoiseBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNoiseBackgroundView.h; sourceTree = "<group>"; };
+		47ABA90C13A9F75500B056C3 /* CustomNoiseBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNoiseBackgroundView.m; sourceTree = "<group>"; };
 		47F343C013A49AD700EC49ED /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		47F343C113A49AD700EC49ED /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		47F343C513A49BA900EC49ED /* BarBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBackgroundLayer.h; sourceTree = "<group>"; };
@@ -237,6 +253,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		47ABA8EA13A9C0B700B056C3 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				47ABA8E613A9BCA900B056C3 /* CustomTabItem.h */,
+				47ABA8E713A9BCA900B056C3 /* CustomTabItem.m */,
+				47ABA8EB13A9C0E300B056C3 /* CustomSelectionView.h */,
+				47ABA8EC13A9C0E300B056C3 /* CustomSelectionView.m */,
+				47ABA8F513A9D3B700B056C3 /* CustomBackgroundLayer.h */,
+				47ABA8F613A9D3B700B056C3 /* CustomBackgroundLayer.m */,
+				47ABA90B13A9F75500B056C3 /* CustomNoiseBackgroundView.h */,
+				47ABA90C13A9F75500B056C3 /* CustomNoiseBackgroundView.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		47F343BF13A49AC700EC49ED /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +295,7 @@
 		47F343DA13A4AF6F00EC49ED /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				47ABA8EA13A9C0B700B056C3 /* Custom */,
 				47F343DB13A4AF6F00EC49ED /* TabDemoAppDelegate.h */,
 				47F343DC13A4AF6F00EC49ED /* TabDemoAppDelegate.m */,
 				47F343DD13A4AF6F00EC49ED /* TabDemoViewController.h */,
@@ -275,6 +307,8 @@
 		47F343DF13A4AF6F00EC49ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47ABA90513A9F5B300B056C3 /* noise-tile.png */,
+				47ABA90613A9F5B300B056C3 /* noise-tile@2x.png */,
 				47F343E213A4B15500EC49ED /* icon1.png */,
 				47F343E313A4B15500EC49ED /* icon1@2x.png */,
 				47F343E413A4B15500EC49ED /* icon2.png */,
@@ -381,6 +415,8 @@
 				47F343EB13A4B52A00EC49ED /* icon2@2x.png in Resources */,
 				47F343EC13A4B52C00EC49ED /* icon3.png in Resources */,
 				47F343ED13A4B52E00EC49ED /* icon3@2x.png in Resources */,
+				47ABA90713A9F5B300B056C3 /* noise-tile.png in Resources */,
+				47ABA90813A9F5B300B056C3 /* noise-tile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +446,10 @@
 				4719172A13A4875400567E9E /* main.m in Sources */,
 				47F343E013A4AF6F00EC49ED /* TabDemoAppDelegate.m in Sources */,
 				47F343E113A4AF6F00EC49ED /* TabDemoViewController.m in Sources */,
+				47ABA8E813A9BCA900B056C3 /* CustomTabItem.m in Sources */,
+				47ABA90913A9F5CC00B056C3 /* CustomSelectionView.m in Sources */,
+				47ABA90A13A9F5DA00B056C3 /* CustomBackgroundLayer.m in Sources */,
+				47ABA90D13A9F75600B056C3 /* CustomNoiseBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
