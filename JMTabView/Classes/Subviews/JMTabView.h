@@ -1,6 +1,7 @@
 //  Created by Jason Morrissey
 
 #import <UIKit/UIKit.h>
+#import "JMTabConstants.h"
 #import "JMTabItem.h"
 #import "JMSelectionView.h"
 

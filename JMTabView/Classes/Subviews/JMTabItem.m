@@ -1,5 +1,6 @@
 //  Created by Jason Morrissey
 
+#import "JMTabView.h"
 #import "JMTabItem.h"
 #import "JMTabContainer.h"
 

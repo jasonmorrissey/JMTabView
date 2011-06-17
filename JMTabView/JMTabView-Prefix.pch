@@ -2,5 +2,4 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
-    #import "JMTabConstants.h"
 #endif
