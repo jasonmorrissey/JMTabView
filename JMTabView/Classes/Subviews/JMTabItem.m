@@ -86,7 +86,10 @@
     }
     
     [kTabItemTextColor set];
-    [self.title drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height) withFont:kTabItemFont];
+
+    CGFloat heightTitle = [self.title sizeWithFont:kTabItemFont].height;
+    CGFloat titleYOffset = (self.bounds.size.height - heightTitle) / 2;
+    [self.title drawAtPoint:CGPointMake(xOffset, titleYOffset) withFont:kTabItemFont];
     
     CGContextRestoreGState(context);
 }
