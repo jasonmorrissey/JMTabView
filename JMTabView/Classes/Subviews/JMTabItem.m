@@ -8,6 +8,7 @@
 
 @synthesize title = title_;
 @synthesize icon = icon_;
+@synthesize fixedWidth = fixedWidth_;
 @synthesize executeBlock = executeBlock_;
 
 - (void)dealloc;
@@ -56,6 +57,12 @@
     CGFloat height = (titleSize.height > [self.icon size].height) ? titleSize.height : [self.icon size].height;
     
     height += (kTabItemPadding.height * 2);
+    
+    if (self.fixedWidth > 0)
+    {
+        width = self.fixedWidth;
+        height = 1.;
+    }
     
     return CGSizeMake(width, height);
 }
@@ -122,6 +129,13 @@
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
     JMTabItem * tabItem = [[[JMTabItem alloc] initWithTitle:title icon:icon] autorelease];
+    return tabItem;
+}
+
++ (JMTabItem *)tabItemWithFixedWidth:(CGFloat)fixedWidth;
+{
+    JMTabItem * tabItem = [JMTabItem tabItemWithTitle:nil icon:nil];
+    tabItem.fixedWidth = fixedWidth;
     return tabItem;
 }
 
