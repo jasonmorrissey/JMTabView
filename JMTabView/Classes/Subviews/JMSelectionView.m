@@ -13,10 +13,13 @@
     if (self) 
     {
         [self setBackgroundColor:[UIColor clearColor]];
-        self.layer.shadowOffset = CGSizeMake(0, 1);
-        self.layer.shadowRadius = 1.;
-        self.layer.shadowColor = [[UIColor whiteColor] CGColor];
-        self.layer.shadowOpacity = 0.4;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"4.0"))
+        {
+            self.layer.shadowOffset = CGSizeMake(0, 1);
+            self.layer.shadowRadius = 1.;
+            self.layer.shadowColor = [[UIColor whiteColor] CGColor];
+            self.layer.shadowOpacity = 0.4;
+        }
         self.clipsToBounds = NO;
     }
     return self;

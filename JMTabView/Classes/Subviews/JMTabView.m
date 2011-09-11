@@ -27,6 +27,7 @@
     if (self) 
     {
         [self setBackgroundLayer:[[[BarBackgroundLayer alloc] init] autorelease]];
+        self.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.tabContainer = [[[JMTabContainer alloc] initWithFrame:self.bounds] autorelease];

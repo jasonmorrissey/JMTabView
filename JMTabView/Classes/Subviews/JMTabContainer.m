@@ -47,7 +47,8 @@
     for (JMTabItem * item in self.tabItems)
     {
         [item sizeToFit];
-        [item setFrame:CGRectMake(xOffset, yOffset, item.frame.size.width, item.frame.size.height)];
+        
+        [item setFrame:CGRectIntegral(CGRectMake(xOffset, yOffset, item.frame.size.width, item.frame.size.height))];
         
         xOffset += item.frame.size.width;
         
@@ -110,6 +111,7 @@
     [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0. : kTabSelectionAnimationDuration)];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     self.selectionView.frame = tabItem.frame;
+    [self.selectionView centerVerticallyInSuperView];
     [UIView commitAnimations];
 }
 

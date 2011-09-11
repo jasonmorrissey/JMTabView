@@ -6,5 +6,4 @@
 
 + (UIColor *)colorWithHex:(long)hexColor;
 + (UIColor *)colorWithHex:(long)hexColor alpha:(float)opacity;
-
 @end

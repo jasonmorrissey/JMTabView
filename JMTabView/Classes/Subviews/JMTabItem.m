@@ -38,7 +38,12 @@
 
 - (CGSize) sizeThatFits:(CGSize)size;
 {
-    CGSize titleSize = [self.title sizeWithFont:kTabItemFont];
+    CGSize titleSize = CGSizeZero;
+    
+    if (self.title)
+    {
+        titleSize = [self.title sizeWithFont:kTabItemFont];
+    }
     
     CGFloat width = titleSize.width;
     
@@ -80,7 +85,7 @@
         CGFloat radius = 0.5f * CGRectGetHeight(bounds);
         UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:radius];
         [[UIColor colorWithWhite:1. alpha:0.3] set];
-        path.lineWidth = 2.;
+        [path setLineWidth:2.];
         [path stroke];
     }
     
