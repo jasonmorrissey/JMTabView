@@ -9,7 +9,7 @@
     CGSize containerSize_;
 }
 
-@property (nonatomic,retain) JMSelectionView * selectionView;
+@property (nonatomic,strong) JMSelectionView * selectionView;
 @property (assign) BOOL momentary;
 @property (assign) NSUInteger selectedIndex;
 @property (assign) CGFloat itemSpacing;

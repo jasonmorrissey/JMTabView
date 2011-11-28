@@ -35,9 +35,5 @@
     [self drawInnerShadowInRect:rect fillColor:[UIColor colorWithHex:0x252525]];
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 @end

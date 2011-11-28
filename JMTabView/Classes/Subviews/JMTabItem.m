@@ -11,13 +11,6 @@
 @synthesize fixedWidth = fixedWidth_;
 @synthesize executeBlock = executeBlock_;
 
-- (void)dealloc;
-{
-    self.title = nil;
-    self.icon = nil;
-    self.executeBlock = nil;
-    [super dealloc];
-}
 
 - (id)initWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
@@ -133,7 +126,7 @@
 
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 {
-    JMTabItem * tabItem = [[[JMTabItem alloc] initWithTitle:title icon:icon] autorelease];
+    JMTabItem * tabItem = [[JMTabItem alloc] initWithTitle:title icon:icon];
     return tabItem;
 }
 

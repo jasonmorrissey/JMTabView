@@ -11,7 +11,7 @@
     self = [super init];
     if (self)
     {
-        CAGradientLayer * gradientLayer = [[[CAGradientLayer alloc] init] autorelease];
+        CAGradientLayer * gradientLayer = [[CAGradientLayer alloc] init];
         UIColor * startColor = [UIColor colorWithHex:0x282928];
         UIColor * endColor = [UIColor colorWithHex:0x4a4b4a];
         gradientLayer.frame = CGRectMake(0, 0, 1024, [Resources isIPAD] ? 60. : 48.);

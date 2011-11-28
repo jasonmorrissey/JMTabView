@@ -9,8 +9,8 @@ typedef void(^JMTabExecutionBlock)(void);
 
 @interface JMTabItem : UIButton
 
-@property (nonatomic,retain) NSString * title;
-@property (nonatomic,retain) UIImage * icon;
+@property (nonatomic,strong) NSString * title;
+@property (nonatomic,strong) UIImage * icon;
 @property (nonatomic) CGFloat fixedWidth;
 
 - (id)initWithTitle:(NSString *)title icon:(UIImage *)icon;

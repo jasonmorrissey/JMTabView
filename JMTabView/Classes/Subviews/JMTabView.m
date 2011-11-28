@@ -6,7 +6,7 @@
 #import "UIView+Positioning.h"
 
 @interface JMTabView()
-@property (nonatomic,retain) JMTabContainer * tabContainer;
+@property (nonatomic,strong) JMTabContainer * tabContainer;
 @end
 
 @implementation JMTabView
@@ -16,9 +16,7 @@
 
 - (void)dealloc;
 {
-    self.tabContainer = nil;
     self.delegate = nil;
-    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -26,11 +24,11 @@
     self = [super initWithFrame:frame];
     if (self) 
     {
-        [self setBackgroundLayer:[[[BarBackgroundLayer alloc] init] autorelease]];
+        [self setBackgroundLayer:[[BarBackgroundLayer alloc] init]];
         self.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        self.tabContainer = [[[JMTabContainer alloc] initWithFrame:self.bounds] autorelease];
+        self.tabContainer = [[JMTabContainer alloc] initWithFrame:self.bounds];
         [self addSubview:self.tabContainer];
     }
     return self;

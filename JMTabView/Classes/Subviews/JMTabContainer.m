@@ -7,7 +7,7 @@
 #define kSelectionAnimation @"kSelectionAnimation"
 
 @interface JMTabContainer()
-@property (nonatomic,retain) NSMutableArray * tabItems;
+@property (nonatomic,strong) NSMutableArray * tabItems;
 @end
 
 @implementation JMTabContainer
@@ -18,12 +18,6 @@
 @synthesize momentary = momentary_;
 @synthesize itemSpacing = itemSpacing_;
 
-- (void)dealloc
-{
-    self.tabItems = nil;
-    self.selectionView = nil;
-    [super dealloc];
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -31,7 +25,7 @@
     if (self) 
     {
         self.tabItems = [NSMutableArray array];
-        self.selectionView = [[[JMSelectionView alloc] initWithFrame:CGRectZero] autorelease];
+        self.selectionView = [[JMSelectionView alloc] initWithFrame:CGRectZero];
         self.itemSpacing = kTabSpacing;
         [self addSubview:self.selectionView];
     }
@@ -106,7 +100,7 @@
 - (void)animateSelectionToItemAtIndex:(NSUInteger)itemIndex;
 {
     JMTabItem * tabItem = [self.tabItems objectAtIndex:itemIndex];
-    [UIView beginAnimations:kSelectionAnimation context:self.selectionView];
+    [UIView beginAnimations:kSelectionAnimation context:(__bridge void *)(self.selectionView)];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0. : kTabSelectionAnimationDuration)];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];

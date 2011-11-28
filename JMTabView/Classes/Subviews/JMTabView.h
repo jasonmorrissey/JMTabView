@@ -24,7 +24,7 @@
 - (void)addTabItem:(JMTabItem *)tabItem;
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 - (void)setSelectedIndex:(NSUInteger)itemIndex;
-@property (nonatomic,assign) id<JMTabViewDelegate> delegate;
+@property (nonatomic,unsafe_unretained) id<JMTabViewDelegate> delegate;
 
 #if NS_BLOCKS_AVAILABLE
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
