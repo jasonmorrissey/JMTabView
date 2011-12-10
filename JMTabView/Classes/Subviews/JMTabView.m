@@ -57,7 +57,7 @@
 
 - (void)didSelectItemAtIndex:(NSUInteger)itemIndex;
 {
-    if (self.delegate)
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectTabAtIndex:)])
     {
         [self.delegate tabView:self didSelectTabAtIndex:itemIndex];
     }

@@ -10,7 +10,7 @@
 #pragma Mark -
 #pragma Mark - JMTabViewDelegate
 
-@protocol JMTabViewDelegate
+@protocol JMTabViewDelegate <NSObject>
 -(void)tabView:(JMTabView *)tabView didSelectTabAtIndex:(NSUInteger)itemIndex;
 @end
 
