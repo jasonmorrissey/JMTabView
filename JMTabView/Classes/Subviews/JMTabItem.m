@@ -10,6 +10,7 @@
 @synthesize icon = icon_;
 @synthesize fixedWidth = fixedWidth_;
 @synthesize executeBlock = executeBlock_;
+@synthesize momentary = momentary_;
 
 - (void)dealloc;
 {

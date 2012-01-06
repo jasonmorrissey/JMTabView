@@ -87,7 +87,7 @@
 {
     self.selectedIndex = [self.tabItems indexOfObject:tabItem];
     
-    if (!self.momentary)
+    if (!self.momentary && !tabItem.momentary)
     {
         [self animateSelectionToItemAtIndex:self.selectedIndex];
     }

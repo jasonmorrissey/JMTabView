@@ -50,6 +50,13 @@
     CustomTabItem * tabItem3 = [CustomTabItem tabItemWithTitle:@"Three" icon:standardIcon alternateIcon:highlightedIcon];
     CustomTabItem * tabItem4 = [CustomTabItem tabItemWithTitle:@"Four" icon:standardIcon alternateIcon:highlightedIcon];
     CustomTabItem * tabItem5 = [CustomTabItem tabItemWithTitle:@"Five" icon:standardIcon alternateIcon:highlightedIcon];
+    
+    // The momentary property of individual tab items can be used to set up UIs like Oink's tab bar, where
+    // a centered, larger button on the tab bar is used to pull up a modal view controller from anywhere,
+    // while the other 4 tabs work as tabs.
+    tabItem3.momentary = YES;
+    tabItem3.title = @"Momentary";
+    
 
     [tabView addTabItem:tabItem1];
     [tabView addTabItem:tabItem2];
