@@ -12,6 +12,7 @@ typedef void(^JMTabExecutionBlock)(void);
 @property (nonatomic,retain) NSString * title;
 @property (nonatomic,retain) UIImage * icon;
 @property (nonatomic) CGFloat fixedWidth;
+@property (assign) BOOL momentary;
 
 - (id)initWithTitle:(NSString *)title icon:(UIImage *)icon;
 -(BOOL)isSelectedTabItem;
