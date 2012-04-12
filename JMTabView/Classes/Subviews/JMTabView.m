@@ -11,6 +11,7 @@
 
 @implementation JMTabView
 
+@synthesize selectedIndex = _selectedIndex;
 @synthesize tabContainer = tabContainer_;
 @synthesize delegate = delegate_;
 
@@ -93,6 +94,7 @@
 
 - (void)setSelectedIndex:(NSUInteger)itemIndex;
 {
+    _selectedIndex = itemIndex;
     [self.tabContainer layoutSubviews];
     [self.tabContainer animateSelectionToItemAtIndex:itemIndex];
 }
