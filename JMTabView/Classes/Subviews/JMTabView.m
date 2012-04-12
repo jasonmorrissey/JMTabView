@@ -95,6 +95,14 @@
     [self addTabItem:tabItem];
 }
 
+- (void)removeTabItemAtIndex:(NSUInteger)index {
+    [self.tabContainer removeTabItem:[self.tabContainer tabItemAtIndex:index]];
+}
+
+- (void)removeAllTabItems {
+    [self.tabContainer removeAllTabItems];
+}
+
 #if NS_BLOCKS_AVAILABLE
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
 {

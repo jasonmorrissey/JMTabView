@@ -24,6 +24,9 @@
 - (void)addTabItem:(JMTabItem *)tabItem;
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 
+- (void)removeTabItemAtIndex:(NSUInteger)index;
+- (void)removeAllTabItems;
+
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic,assign) IBOutlet id<JMTabViewDelegate> delegate;
 
