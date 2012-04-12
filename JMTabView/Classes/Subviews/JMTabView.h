@@ -25,7 +25,7 @@
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
-@property (nonatomic,assign) id<JMTabViewDelegate> delegate;
+@property (nonatomic,assign) IBOutlet id<JMTabViewDelegate> delegate;
 
 #if NS_BLOCKS_AVAILABLE
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;

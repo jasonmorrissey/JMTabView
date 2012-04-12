@@ -36,6 +36,17 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self setBackgroundLayer:[[[BarBackgroundLayer alloc] init] autorelease]];
+        [self setTabContainer:[[[JMTabContainer alloc] initWithFrame:self.bounds] autorelease]];
+        [self addSubview:self.tabContainer];
+    }
+    return self;
+}
+
 - (void)setBackgroundLayer:(CALayer *)backgroundLayer;
 {
     CALayer * oldBackground = [[self.layer sublayers] objectAtIndex:0];
