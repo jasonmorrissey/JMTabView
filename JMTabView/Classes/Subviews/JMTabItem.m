@@ -10,6 +10,12 @@
 @synthesize icon = icon_;
 @synthesize fixedWidth = fixedWidth_;
 @synthesize executeBlock = executeBlock_;
+@synthesize padding = padding_;
+- (void)setPadding:(CGSize)padding {
+    padding_ = padding;
+    
+    [self setNeedsDisplay];
+}
 
 - (void)dealloc;
 {
@@ -52,11 +58,11 @@
         width += kTabItemIconMargin;
     }
     
-    width += (kTabItemPadding.width * 2);
+    width += (self.padding.width * 2);
     
     CGFloat height = (titleSize.height > [self.icon size].height) ? titleSize.height : [self.icon size].height;
     
-    height += (kTabItemPadding.height * 2);
+    height += (self.padding.height * 2);
     
     if (self.fixedWidth > 0)
     {
@@ -84,11 +90,11 @@
         [path stroke];
     }
     
-    CGFloat xOffset = kTabItemPadding.width;
+    CGFloat xOffset = self.padding.width;
 
     if (self.icon)
     {
-        [self.icon drawAtPoint:CGPointMake(xOffset, kTabItemPadding.height)];
+        [self.icon drawAtPoint:CGPointMake(xOffset, self.padding.height)];
         xOffset += [self.icon size].width + kTabItemIconMargin;
     }
     
