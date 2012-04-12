@@ -29,6 +29,7 @@
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic,assign) IBOutlet id<JMTabViewDelegate> delegate;
+@property (nonatomic,assign) CGSize itemPadding;
 
 #if NS_BLOCKS_AVAILABLE
 - (void)addTabItemWithTitle:(NSString *)title icon:(UIImage *)icon executeBlock:(JMTabExecutionBlock)executeBlock;
