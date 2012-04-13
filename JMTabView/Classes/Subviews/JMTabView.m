@@ -11,9 +11,10 @@
 
 @implementation JMTabView
 
-@synthesize selectedIndex = _selectedIndex;
-@synthesize tabContainer = tabContainer_;
 @synthesize delegate = delegate_;
+@synthesize selectedIndex = selectedIndex_;
+@synthesize tabContainer = tabContainer_;
+@synthesize itemPadding = itemPadding_;
 
 - (void)dealloc;
 {
@@ -31,8 +32,8 @@
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.tabContainer = [[[JMTabContainer alloc] initWithFrame:self.bounds] autorelease];
+        self.itemPadding = kTabItemPadding; 
         [self addSubview:self.tabContainer];
-        itemPadding_ = kTabItemPadding;
     }
     return self;
 }
@@ -43,8 +44,8 @@
     {
         [self setBackgroundLayer:[[[BarBackgroundLayer alloc] init] autorelease]];
         [self setTabContainer:[[[JMTabContainer alloc] initWithFrame:self.bounds] autorelease]];
+        self.itemPadding = kTabItemPadding; 
         [self addSubview:self.tabContainer];
-        itemPadding_ = kTabItemPadding;
     }
     return self;
 }
@@ -72,7 +73,7 @@
 
 - (void)didSelectItemAtIndex:(NSUInteger)itemIndex;
 {
-    if (self.delegate)
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectTabAtIndex:)])
     {
         [self.delegate tabView:self didSelectTabAtIndex:itemIndex];
     }
@@ -126,9 +127,8 @@
     return [self.tabContainer selectedIndex];
 }
 
-@synthesize itemPadding = itemPadding_;
 - (void)setTabItemPadding:(CGSize)itemPadding {
-    itemPadding_ = itemPadding;
+    self.itemPadding = itemPadding;
     
     NSUInteger tabItemIndex, numberOfTabItems = [[self tabContainer] numberOfTabItems];
     
