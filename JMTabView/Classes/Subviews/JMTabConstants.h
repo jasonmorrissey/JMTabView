@@ -4,6 +4,6 @@
 #define kTabItemTextColor [UIColor whiteColor]
 #define kTabItemPadding CGSizeMake(16., 10.)
 #define kTabItemIconMargin 8.
-#define kTabSpacing 14.
+#define kTabSpacing 10.
 #define kTabSelectionAnimationDuration 0.3
 
