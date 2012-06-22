@@ -132,8 +132,6 @@
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     self.selectionView.frame = tabItem.frame;
     
-    NSLog(@"%f + %f + %f > %f + %f",tabItem.frame.origin.x, tabItem.frame.size.width, self.itemSpacing, self.contentOffset.x, self.frame.size.width);
-    
     if (tabItem.frame.origin.x - self.itemSpacing < self.contentOffset.x) {
         [self setContentOffset:CGPointMake(tabItem.frame.origin.x - self.itemSpacing, 0) animated:FALSE];
     } else if (self.frame.size.width > 0 && tabItem.frame.origin.x + tabItem.frame.size.width + self.itemSpacing > self.contentOffset.x + self.frame.size.width) {
