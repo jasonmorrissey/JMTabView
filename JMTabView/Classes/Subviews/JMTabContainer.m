@@ -29,10 +29,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) 
-    {
+    {   
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.tabItems = [NSMutableArray array];
         self.selectionView = [[[JMSelectionView alloc] initWithFrame:CGRectZero] autorelease];
         self.itemSpacing = kTabSpacing;
+        self.bounces = YES;
+        self.scrollEnabled = YES;
+        self.alwaysBounceHorizontal = YES;
+        self.alwaysBounceVertical = NO;
+        self.showsHorizontalScrollIndicator = NO;
+        self.showsVerticalScrollIndicator = NO;
         [self addSubview:self.selectionView];
     }
     return self;
@@ -40,35 +47,35 @@
 
 - (void)layoutSubviews;
 {
-    CGFloat xOffset = 0.;
+   
+    CGFloat xOffset = self.itemSpacing;
     CGFloat yOffset = 0.;
     CGFloat itemHeight = 0.;
-    
+
     for (JMTabItem * item in self.tabItems)
     {
         [item sizeToFit];
         [item setFrame:CGRectMake(xOffset, yOffset, item.frame.size.width, item.frame.size.height)];
         
-        xOffset += item.frame.size.width;
-        
-        if (item != [self.tabItems lastObject])
-        {
-            xOffset += self.itemSpacing;
-        }
+        xOffset += item.frame.size.width + self.itemSpacing;
 
-        itemHeight = item.frame.size.height;
+        itemHeight = MAX(itemHeight, item.frame.size.height);
     }
-
-    containerSize_.width = xOffset;
-    containerSize_.height = itemHeight;
     
-    [self sizeToFit];
+    CGRect f = CGRectMake(self.frame.origin.x,
+                          self.frame.origin.y,
+                          xOffset < self.superview.frame.size.width
+                            ? xOffset
+                            : self.superview.frame.size.width,
+                          itemHeight
+                          );
+    
+    if (!CGRectEqualToRect(f, self.frame)) {
+        self.frame = f;
+    }
+    
+    self.contentSize = CGSizeMake(xOffset, itemHeight);
     [self centerInSuperView];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size;
-{
-    return containerSize_;
 }
 
 - (void)addTabItem:(JMTabItem *)tabItem;
@@ -124,6 +131,15 @@
     [UIView setAnimationDuration:(CGRectIsEmpty(self.selectionView.frame) ? 0. : kTabSelectionAnimationDuration)];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     self.selectionView.frame = tabItem.frame;
+    
+    NSLog(@"%f + %f + %f > %f + %f",tabItem.frame.origin.x, tabItem.frame.size.width, self.itemSpacing, self.contentOffset.x, self.frame.size.width);
+    
+    if (tabItem.frame.origin.x - self.itemSpacing < self.contentOffset.x) {
+        [self setContentOffset:CGPointMake(tabItem.frame.origin.x - self.itemSpacing, 0) animated:FALSE];
+    } else if (self.frame.size.width > 0 && tabItem.frame.origin.x + tabItem.frame.size.width + self.itemSpacing > self.contentOffset.x + self.frame.size.width) {
+        [self setContentOffset:CGPointMake(self.contentOffset.x + (tabItem.frame.origin.x + tabItem.frame.size.width + self.itemSpacing) - (self.contentOffset.x + self.frame.size.width), 0) animated:FALSE];
+    }
+
     [UIView commitAnimations];
 }
 
