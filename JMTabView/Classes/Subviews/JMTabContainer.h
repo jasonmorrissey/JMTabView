@@ -4,10 +4,7 @@
 #import "JMTabItem.h"
 #import "JMSelectionView.h"
 
-@interface JMTabContainer : UIView
-{
-    CGSize containerSize_;
-}
+@interface JMTabContainer : UIScrollView
 
 @property (nonatomic,retain) JMSelectionView * selectionView;
 @property (assign) BOOL momentary;
