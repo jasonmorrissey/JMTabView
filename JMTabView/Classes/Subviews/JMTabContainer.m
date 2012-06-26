@@ -76,6 +76,7 @@
     
     self.contentSize = CGSizeMake(xOffset, itemHeight);
     [self centerInSuperView];
+    self.scrollEnabled = self.frame.size.width < self.contentSize.width;
 }
 
 - (void)addTabItem:(JMTabItem *)tabItem;
