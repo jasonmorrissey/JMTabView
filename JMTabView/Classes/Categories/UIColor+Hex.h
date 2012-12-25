@@ -4,6 +4,9 @@
 
 @interface UIColor (Hex)
 
+@property (readonly) NSString *hexString;
+
 + (UIColor *)colorWithHex:(long)hexColor;
 + (UIColor *)colorWithHex:(long)hexColor alpha:(float)opacity;
+
 @end
