@@ -99,6 +99,7 @@
 
 - (void)animateSelectionToItemAtIndex:(NSUInteger)itemIndex;
 {
+    self.selectedIndex = itemIndex;
     JMTabItem * tabItem = [self.tabItems objectAtIndex:itemIndex];
     [UIView beginAnimations:kSelectionAnimation context:(__bridge void *)(self.selectionView)];
     [UIView setAnimationBeginsFromCurrentState:YES];
