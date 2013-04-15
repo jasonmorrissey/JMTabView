@@ -3,7 +3,6 @@
 #import "JMTabView.h"
 #import "JMTabContainer.h"
 #import "BarBackgroundLayer.h"
-#import "UIView+Positioning.h"
 
 @interface JMTabView()
 @property (nonatomic,strong) JMTabContainer * tabContainer;

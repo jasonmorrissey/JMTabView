@@ -2,7 +2,6 @@
 
 #import "JMTabContainer.h"
 #import "JMTabView.h"
-#import "UIView+Positioning.h"
 
 #define kSelectionAnimation @"kSelectionAnimation"
 
