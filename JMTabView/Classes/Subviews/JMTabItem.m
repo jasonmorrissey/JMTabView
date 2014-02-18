@@ -44,7 +44,12 @@
 
 - (CGSize) sizeThatFits:(CGSize)size;
 {
-    CGSize titleSize = [self.title sizeWithFont:kTabItemFont];
+    CGSize titleSize;
+    if ([self.title respondsToSelector:@selector(sizeWithAttributes:)]) {
+        titleSize = [self.title sizeWithAttributes:@{NSFontAttributeName: kTabItemFont}];
+    }else {
+        titleSize = [self.title sizeWithFont: kTabItemFont];
+    }
     
     CGFloat width = titleSize.width;
     
@@ -99,10 +104,21 @@
     }
     
     [kTabItemTextColor set];
-
-    CGFloat heightTitle = [self.title sizeWithFont:kTabItemFont].height;
+    
+    CGFloat heightTitle;
+    if ([self.title respondsToSelector:@selector(sizeWithAttributes:)]) {
+        heightTitle = [self.title sizeWithAttributes:@{NSFontAttributeName: kTabItemFont}].height;
+    } else {
+        heightTitle = [self.title sizeWithFont:kTabItemFont].height;
+    }
     CGFloat titleYOffset = (self.bounds.size.height - heightTitle) / 2;
-    [self.title drawAtPoint:CGPointMake(xOffset, titleYOffset) withFont:kTabItemFont];
+    
+    if ([self.title respondsToSelector:@selector(drawAtPoint:withAttributes:)]){
+        [self.title drawAtPoint:CGPointMake(xOffset, titleYOffset) withAttributes:@{NSFontAttributeName: kTabItemFont}];
+    }else {
+        [self.title drawAtPoint:CGPointMake(xOffset, titleYOffset) withFont:kTabItemFont];
+    }
+    
     
     CGContextRestoreGState(context);
 }
