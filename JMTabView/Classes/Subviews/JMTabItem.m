@@ -81,7 +81,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     UIColor * shadowColor = [UIColor blackColor];
     CGContextSetShadowWithColor(context, CGSizeMake(0.0f, 1.0f), 1.0f, [shadowColor CGColor]);
-    CGContextSaveGState(context);   
+    CGContextSaveGState(context);
     
     if (self.highlighted)
     {
@@ -94,7 +94,7 @@
     }
     
     CGFloat xOffset = self.padding.width;
-
+    
     if (self.icon)
     {
         [self.icon drawAtPoint:CGPointMake(xOffset, self.padding.height)];
@@ -103,10 +103,7 @@
     
     [kTabItemTextColor set];
     
-    CGFloat heightTitle;
-    if ([self.title respondsToSelector:@selector(sizeWithAttributes:)]) {
-        heightTitle = [self.title sizeWithAttributes:@{NSFontAttributeName: kTabItemFont}].height;
-    }
+    CGFloat heightTitle = [self.title sizeWithAttributes:@{NSFontAttributeName: kTabItemFont}].height;
     CGFloat titleYOffset = (self.bounds.size.height - heightTitle) / 2;
     
     if ([self.title respondsToSelector:@selector(drawAtPoint:withAttributes:)]){
@@ -133,13 +130,13 @@
 {
     JMTabContainer *tabContainer = (JMTabContainer *)[self superview];
     [tabContainer itemSelected:self];
-
-    #ifdef NS_BLOCKS_AVAILABLE
+    
+#ifdef NS_BLOCKS_AVAILABLE
     if (executeBlock_)
     {
         executeBlock_();
     }
-    #endif
+#endif
 }
 
 + (JMTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon;
